@@ -10,7 +10,78 @@
 </head>
 
 <body>
-    <div id="main"></div>
+    <div class="main">
+        <!-- Cards -->
+        <section class="allElems">
+            <div class="todo elem" id="0">
+                <img src="https://images.unsplash.com/photo-1665808283100-34cba9e4a740?q=80&w=1170&auto=format&fit=crop"
+                    alt="">
+                <h2>To Do List</h2>
+            </div>
+            <div class="daily elem" id="1">
+                <img src="https://images.unsplash.com/photo-1768055105012-4c53791b2877?q=80&w=1632&auto=format&fit=crop"
+                    alt="">
+                <h2>Daily Tasks</h2>
+            </div>
+            <div class="moti elem" id="2">
+                <img src="https://images.unsplash.com/photo-1617175379644-ba4238718eca?q=80&w=1170&auto=format&fit=crop"
+                    alt="">
+                <h2>Motivation</h2>
+            </div>
+            <div class="pomo elem" id="3">
+                <img src="https://images.unsplash.com/photo-1714424674988-9d728af58653?q=80&w=1074&auto=format&fit=crop"
+                    alt="">
+                <h2>Pomodoro Timer</h2>
+            </div>
+            <div class="goals elem" id="4">
+                <img src="https://images.unsplash.com/photo-1637507005192-64fc7b94039d?q=80&w=735&auto=format&fit=crop"
+                    alt="">
+                <h2>Daily Goals</h2>
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <section class="fullElem todo-list-fullpage">
+            <button class="close" id="0">Close</button>
+            <h2>Your Personalised Task List</h2>
+
+            <div class="todo-container">
+                <div class="addTask">
+                    <form>
+                        <input type="text" placeholder="Enter Task">
+                        <textarea placeholder="Enter Details"></textarea>
+                        <div>
+                            <input type="checkbox" name="check" id="check">
+                            <label for="check">Mark as Important!</label>
+                        </div>
+                        <button>Add Task</button>
+                    </form>
+                </div>
+                <div class="allTask">
+                    <div class="task">
+                        <h5>Gym Jao</h5>
+                        <button>Mark as Completed</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="fullElem daily-planner-fullpage">
+            <button class="close" id="1">Close</button>
+            <h2>Daily Planner</h2>
+        </section>
+        <section class="fullElem motivational-fullpage">
+            <button class="close" id="2">Close</button>
+            <h2>Motivational Quote</h2>
+        </section>
+        <section class="fullElem pomodoro-fullpage">
+            <button class="close" id="3">Close</button>
+            <h2>Pomodoro Timer</h2>
+        </section>
+        <section class="fullElem daily-goals-fullpage">
+            <button class="close" id="4">Close</button>
+            <h2>Daily Goals</h2>
+        </section>
+    </div>
 
     <script src="script.js"></script>
 </body>

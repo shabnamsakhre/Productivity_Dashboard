@@ -1,6 +1,6 @@
 :root {
   --pri: #f8f4e1;
-  --sec: #4e1f00;
+  --sec: #381c0a;
   --tri1: #feba17;
   --tri2: #74512d;
 }
@@ -25,6 +25,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Aeonik;
+  color: var(--pri);
 }
 html,
 body {
@@ -37,3 +39,190 @@ body {
   height: 100%;
   background-color: var(--sec);
 }
+
+nav {
+  width: 100%;
+  height: 60px;
+  background-color: var(--tri2);
+  position: fixed;
+}
+
+section.allElems {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  padding-top: 5rem;
+}
+
+.elem {
+  position: relative;
+  width: 18.6%;
+  height: 350px;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+
+.elem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 18%;
+  transition: all ease 0.2s;
+}
+
+.elem h2 {
+  position: absolute;
+  font-weight: 500;
+  bottom: 1rem;
+  right: 1.2rem;
+}
+
+.elem:hover img {
+  scale: 0.99;
+  filter: blur(5px);
+}
+
+/* .elem:active {
+  scale: 0.97;
+} */
+
+section.fullElem {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--sec);
+}
+
+.close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: medium;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  background-color: var(--tri1);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+
+button:active {
+  scale: 0.97;
+}
+
+/* To Do Page Start Here */
+.todo-list-fullpage {
+  display: block;
+  padding: 1rem 2rem;
+}
+
+.todo-list-fullpage h2 {
+  font-size: 3rem;
+}
+
+.todo-list-fullpage .todo-container {
+  width: 100%;
+  height: 83%;
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-list-fullpage .todo-container .addTask {
+  width: 33%;
+  height: 100%;
+  background-color: var(--tri2);
+  border-radius: 1.5rem;
+}
+
+.todo-list-fullpage .todo-container .addTask form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.todo-container .addTask form input,
+.todo-container .addTask form textarea,
+.todo-container .addTask form button {
+  font-size: large;
+  padding: 1rem 1.5rem;
+  background-color: var(--pri);
+  color: var(--sec);
+  border: none;
+  outline: none;
+  border-radius: 8px;
+}
+
+.todo-container .addTask form textarea {
+  height: 300px;
+  resize: none;
+}
+
+.todo-container .addTask form div input {
+  scale: 1.5;
+}
+
+.todo-container .addTask form div label {
+  font-size: large;
+  margin-left: 10px;
+}
+
+.todo-container .addTask form button {
+  background-color: var(--tri1);
+  font-size: larger;
+  font-weight: 700;
+  transition: all ease 0.2s;
+  padding: 0.7rem;
+}
+
+/* .todo-container .addTask form button:active {
+  scale: 0.98;
+} */
+
+.todo-list-fullpage .todo-container .allTask {
+  width: 65%;
+  height: 100%;
+  background-color: var(--tri2);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  overflow: auto;
+}
+
+.todo-container .allTask .task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1rem;
+  background-color: var(--pri);
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+.todo-container .allTask .task h5 {
+  color: var(--sec);
+  font-size: larger;
+}
+
+.todo-container .allTask .task button {
+  background-color: green;
+  color: var(--pri);
+  font-size: medium;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+
+/* To Do Page Ends Here */
