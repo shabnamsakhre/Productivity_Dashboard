@@ -124,3 +124,30 @@ function dailyPlanner() {
 }
 
 dailyPlanner()
+
+
+// function fetchQuote() {
+//     let response = fetch('https://api.quotable.io/random')
+//         .then((res) => res.json())
+//         .then((data) => console.log(data))
+//         .catch((error) => console.log(error))
+// }
+// fetchQuote()
+
+
+function motivationalQuote() {
+    let motivationalContent = document.querySelector('.motivational-wrapper h2')
+    let motivationalAuthor = document.querySelector('.motivational-wrapper h5')
+
+    async function fetchQuote() {
+        let response = await fetch('http://api.quotable.io/random')
+        let data = await response.json();
+
+        motivationalContent.innerHTML = data.content;
+        motivationalAuthor.innerHTML = '~ ' + data.author
+    }
+
+    fetchQuote()
+}
+
+motivationalQuote();
