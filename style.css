@@ -3,6 +3,8 @@
   --sec: #381c0a;
   --tri1: #feba17;
   --tri2: #74512d;
+  --green: rgb(9, 138, 89);
+  --blue: rgb(0, 191, 225);
 }
 
 @font-face {
@@ -344,3 +346,48 @@ button:active {
   margin-top: 1rem;
 }
 /* Motivational Quote Ends Here */
+
+/* Pomodoro Timer Start Here */
+.pomodoro-fullpage {
+  position: relative;
+}
+
+.pomodoro-fullpage .pomo-timer {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.pomodoro-fullpage .pomo-timer h1 {
+  font-size: 8rem;
+}
+
+.pomodoro-fullpage .pomo-timer .session {
+  font-size: 1.5rem;
+  background-color: var(--green);
+  width: fit-content;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+.pomodoro-fullpage .pomo-timer button {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-color: var(--tri2);
+  padding: 1rem 2rem;
+  margin: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 6px 6px 0 black;
+  transition: all ease 0.1s;
+}
+
+.pomodoro-fullpage .pomo-timer button:active {
+  box-shadow: none;
+}
+/* Pomodoro Timer Ends Here */
