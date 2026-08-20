@@ -57,16 +57,62 @@ section.allElems {
   position: absolute;
   width: 100%;
   height: 100%;
+  padding: 2rem;
+}
+
+.allElems header {
+  width: 100%;
+  height: 45%;
+  background: url(https://images.unsplash.com/photo-1514519273132-6a1abd48302c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-position: 0 55%;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+}
+
+header .header1 h1 {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}
+
+header .header1 h2,
+header .header1 h3 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+header .header2 {
+  text-align: right;
+}
+
+header .header2 h1 {
+  font-size: 3.5rem;
+}
+
+header .header2 h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+header .header2 h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.allElems .features {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
-  padding: 2rem;
-  padding-top: 5rem;
 }
 
 .elem {
   position: relative;
-  width: 18.6%;
+  width: 18.65%;
   height: 350px;
   border-radius: 1rem;
   overflow: hidden;

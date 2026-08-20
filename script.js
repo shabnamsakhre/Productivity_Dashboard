@@ -225,3 +225,36 @@ function pomodoroTimer() {
 }
 
 pomodoroTimer()
+
+
+const apiKey = '87cf32deedd9442793a70453250305'
+const city = 'Nagpur'
+
+let data = null;
+
+async function weatherAPICall() {
+    let res = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`)
+    data = await res.json()
+}
+
+weatherAPICall()
+
+let headerDate = document.querySelector('.header1 h2')
+let headerTime = document.querySelector('.header1 h1')
+
+function timeDate() {
+    let date = new Date();
+
+    let todayDate = date.getDate()
+    let year = date.getFullYear()
+    let monthName = date.toLocaleString('default', { month: 'long' });
+    let dayName = new Date().toLocaleString('en-US', { weekday: 'long' });
+    let time = date.toLocaleTimeString()
+
+    headerDate.innerHTML = `${monthName} ${todayDate}, ${year}`
+    headerTime.innerHTML = `${dayName}, ${time}`
+}
+
+setInterval(function () {
+    timeDate()
+}, 1000)
