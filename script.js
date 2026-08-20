@@ -227,6 +227,85 @@ function pomodoroTimer() {
 pomodoroTimer()
 
 
+function dailyGoals() {
+    let allGoalsList = [
+        {
+            input: "Hello",
+            description: "Hi, How are you?",
+            time: "12:10:12",
+            isCompleted: false
+        }
+    ]
+
+    let addGoalForm = document.querySelector('.addGoal form')
+    let goalInput = document.querySelector('.addGoal form input')
+    let goalDescription = document.querySelector('.addGoal form textarea')
+    let goalsList = document.querySelector('.allGoals');
+
+    function renderGoals() {
+        allGoalsList = JSON.parse(localStorage.getItem('dailyGoalsList')) || []
+
+        if (allGoalsList.length === 0) return goalsList.innerHTML = "<h3 style='width: 100%; text-align: center;'>No Daily Task!</h3>"
+
+        let list = ""
+        allGoalsList.forEach((goal, idx) => list += `<div class="goal" id="goal-${idx}">
+                        <input type="checkbox" id=${idx}>
+                        <h3>${goal.input}</h3>
+                        <hr>
+                        <p>${goal.description}</p>
+                        <span>${goal.time}</span>
+                    </div>`)
+
+        goalsList.innerHTML = list;
+    }
+
+    renderGoals();
+
+    addGoalForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+
+        allGoalsList.push({
+            input: goalInput.value,
+            description: goalDescription.value,
+            time: new Date().toLocaleTimeString(),
+            isCompleted: false
+        })
+
+        localStorage.setItem('dailyGoalsList', JSON.stringify(allGoalsList));
+        renderGoals()
+
+        goalInput.value = ''
+        goalDescription.value = ''
+    })
+
+    function isGoalCompleted() {
+        let allCheckbox = document.querySelectorAll('.goal input')
+        console.log(allCheckbox);
+
+        allCheckbox.forEach(input => {
+            input.addEventListener('click', () => {
+                let isCheck = allGoalsList[input.id].isCompleted;
+                let elem = document.querySelector(`#goal-${input.id}`)
+
+                if (!isCheck) {
+                    allGoalsList[input.id].isCompleted = true;
+                    elem.style.opacity = 0.9
+                    elem.style.textDecoration = "line-through"
+                }
+                else {
+                    allGoalsList[input.id].isCompleted = false;
+                    elem.style.opacity = 1
+                    elem.style.textDecoration = "none"
+                }
+            })
+        })
+    }
+    isGoalCompleted()
+}
+
+dailyGoals()
+
+
 const apiKey = '87cf32deedd9442793a70453250305'
 const city = 'Nagpur'
 
