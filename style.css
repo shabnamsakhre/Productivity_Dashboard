@@ -1,10 +1,20 @@
-:root {
+/* :root {
   --pri: #f8f4e1;
   --sec: #381c0a;
   --tri1: #feba17;
   --tri2: #74512d;
   --green: rgb(9, 138, 89);
   --blue: rgb(0, 191, 225);
+  --red: red;
+} */
+:root {
+  --pri: #eeeeee;
+  --sec: #393e46;
+  --tri1: #d65a31;
+  --tri2: #222831;
+  --green: rgb(9, 138, 89);
+  --blue: rgb(0, 191, 225);
+  --red: rgba(255, 0, 0, 0.804);
 }
 
 @font-face {
@@ -159,7 +169,7 @@ section.fullElem {
   font-size: medium;
   font-weight: 500;
   padding: 0.5rem 1rem;
-  background-color: var(--tri1);
+  background-color: var(--red);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -176,6 +186,7 @@ button:active {
 
 .fullElem h2 {
   font-size: 3rem;
+  color: var(--tri1);
 }
 
 /* To Do Page Start Here */
@@ -269,7 +280,7 @@ button:active {
 
 .todo-container .allTask .task h5 span {
   font-size: 0.7rem;
-  background-color: red;
+  background-color: var(--red);
   color: var(--pri);
   padding: 2px 6px;
   border-radius: 1rem;
@@ -301,7 +312,7 @@ button:active {
   width: 100%;
   height: 83%;
   margin-top: 3rem;
-  background-color: var(--tri2);
+  background-color: var(--pri);
   border-radius: 1.5rem;
   padding: 2rem;
   display: flex;
@@ -315,7 +326,7 @@ button:active {
 .day-planner .day-planner-time {
   width: 49%;
   height: max-content;
-  background-color: var(--sec);
+  background-color: var(--tri2);
   border-radius: 0.5rem;
   position: relative;
 }
@@ -494,7 +505,7 @@ button:active {
 
 .goals-container .allGoals .goal {
   width: 32.4%;
-  background-color: var(--blue);
+  background-color: var(--tri1);
   border-radius: 0.5rem;
   padding: 1rem 1.5rem;
   position: relative;
