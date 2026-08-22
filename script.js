@@ -143,7 +143,7 @@ function motivationalQuote() {
         let response = await fetch('https://dummyjson.com/quotes/random')
         let data = await response.json();
 
-        motivationalContent.innerHTML = data.content;
+        motivationalContent.innerHTML = data.quote;
         motivationalAuthor.innerHTML = '~ ' + data.author
     }
 
