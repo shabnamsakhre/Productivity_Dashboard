@@ -280,7 +280,6 @@ function dailyGoals() {
 
     function isGoalCompleted() {
         let allCheckbox = document.querySelectorAll('.goal input')
-        console.log(allCheckbox);
 
         allCheckbox.forEach(input => {
             input.addEventListener('click', () => {
