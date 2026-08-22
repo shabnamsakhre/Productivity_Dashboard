@@ -328,7 +328,7 @@ function weatherFunctionality() {
     let data = null;
 
     async function weatherAPICall(latitude, longitude) {
-        let res = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`)
+        let res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`)
         data = await res.json()
 
         document.querySelector('.header1 h3').innerHTML = `${data.location.name}, ${data.location.region}`
