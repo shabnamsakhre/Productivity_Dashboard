@@ -140,7 +140,7 @@ function motivationalQuote() {
     let motivationalAuthor = document.querySelector('.motivational-wrapper h5')
 
     async function fetchQuote() {
-        let response = await fetch('http://api.quotable.io/random')
+        let response = await fetch('https://api.quotable.io/random')
         let data = await response.json();
 
         motivationalContent.innerHTML = data.content;
