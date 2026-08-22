@@ -304,53 +304,56 @@ function dailyGoals() {
 
 dailyGoals()
 
+function weatherFunctionality() {
 
-// Set the current location and Weather details
-async function showPosition(position) {
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
+    // Set the current location and Weather details
+    async function showPosition(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
 
-    weatherAPICall(latitude, longitude)
-}
-
-function getMyLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        weatherAPICall(latitude, longitude)
     }
+
+    function getMyLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }
+    }
+    getMyLocation()
+
+
+    const apiKey = '87cf32deedd9442793a70453250305'
+    // const city = 'Nagpur'
+
+    let data = null;
+
+    async function weatherAPICall(latitude, longitude) {
+        let res = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`)
+        data = await res.json()
+
+        document.querySelector('.header1 h3').innerHTML = `${data.location.name}, ${data.location.region}`
+    }
+
+    // weatherAPICall()
+
+    let headerDate = document.querySelector('.header1 h2')
+    let headerTime = document.querySelector('.header1 h1')
+
+    function timeDate() {
+        let date = new Date();
+
+        let todayDate = date.getDate()
+        let year = date.getFullYear()
+        let monthName = date.toLocaleString('default', { month: 'long' });
+        let dayName = new Date().toLocaleString('en-US', { weekday: 'long' });
+        let time = date.toLocaleTimeString()
+
+        headerDate.innerHTML = `${monthName} ${todayDate}, ${year}`
+        headerTime.innerHTML = `${dayName}, ${time}`
+    }
+
+    setInterval(function () {
+        timeDate()
+    }, 1000)
 }
-getMyLocation()
-
-
-const apiKey = '87cf32deedd9442793a70453250305'
-// const city = 'Nagpur'
-
-let data = null;
-
-async function weatherAPICall(latitude, longitude) {
-    let res = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`)
-    data = await res.json()
-
-    document.querySelector('.header1 h3').innerHTML = `${data.location.name}, ${data.location.region}`
-}
-
-// weatherAPICall()
-
-let headerDate = document.querySelector('.header1 h2')
-let headerTime = document.querySelector('.header1 h1')
-
-function timeDate() {
-    let date = new Date();
-
-    let todayDate = date.getDate()
-    let year = date.getFullYear()
-    let monthName = date.toLocaleString('default', { month: 'long' });
-    let dayName = new Date().toLocaleString('en-US', { weekday: 'long' });
-    let time = date.toLocaleTimeString()
-
-    headerDate.innerHTML = `${monthName} ${todayDate}, ${year}`
-    headerTime.innerHTML = `${dayName}, ${time}`
-}
-
-setInterval(function () {
-    timeDate()
-}, 1000)
+weatherFunctionality()

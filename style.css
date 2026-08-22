@@ -36,6 +36,7 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: Aeonik;
   color: var(--pri);
@@ -78,8 +79,14 @@ section.allElems {
   background-position: 0 55%;
   border-radius: 1rem;
   margin-bottom: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 2rem 4rem;
 }
@@ -115,8 +122,11 @@ header .header2 h3 {
 }
 
 .allElems .features {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 1.5rem;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
@@ -127,14 +137,18 @@ header .header2 h3 {
   border-radius: 1rem;
   overflow: hidden;
   cursor: pointer;
+  -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
 }
 
 .elem img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
+  -o-object-position: 18%;
   object-position: 18%;
+  -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
 }
 
@@ -147,6 +161,7 @@ header .header2 h3 {
 
 .elem:hover img {
   scale: 0.99;
+  -webkit-filter: blur(5px);
   filter: blur(5px);
 }
 
@@ -173,6 +188,7 @@ section.fullElem {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
 }
 
@@ -194,8 +210,14 @@ button:active {
   width: 100%;
   height: 83%;
   margin-top: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -207,7 +229,12 @@ button:active {
 }
 
 .todo-list-fullpage .todo-container .addTask form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 2rem;
   gap: 1rem;
@@ -243,6 +270,7 @@ button:active {
   background-color: var(--tri1);
   font-size: larger;
   font-weight: 700;
+  -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
   padding: 0.7rem;
 }
@@ -261,8 +289,14 @@ button:active {
 }
 
 .todo-container .allTask .task {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0.7rem 1rem;
   background-color: var(--pri);
@@ -273,7 +307,11 @@ button:active {
 .todo-container .allTask .task h5 {
   color: var(--sec);
   font-size: larger;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   gap: 0.7rem;
 }
@@ -302,6 +340,7 @@ button:active {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
 }
 
@@ -315,9 +354,15 @@ button:active {
   background-color: var(--pri);
   border-radius: 1.5rem;
   padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -ms-flex-line-pack: start;
   align-content: flex-start;
   gap: 1rem;
   overflow: auto;
@@ -325,6 +370,8 @@ button:active {
 
 .day-planner .day-planner-time {
   width: 49%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
   background-color: var(--tri2);
   border-radius: 0.5rem;
@@ -353,8 +400,14 @@ button:active {
 .motivational-fullpage .motivational-container {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border-radius: 2rem;
 }
@@ -367,10 +420,13 @@ button:active {
   border-radius: 1.2rem;
   padding: 5rem 2rem 3rem 2rem;
   border: 5px solid var(--tri1);
+  -webkit-box-shadow: 0px 0px 50px 10px var(--tri2);
   box-shadow: 0px 0px 50px 10px var(--tri2);
 }
 
 .motivational-container .motivational-wrapper h3 {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   background-color: black;
   padding: 0.5rem 5rem;
@@ -380,6 +436,8 @@ button:active {
   position: absolute;
   top: -1.3rem;
   left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
 }
 
@@ -413,6 +471,8 @@ button:active {
   position: absolute;
   top: 45%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -424,6 +484,8 @@ button:active {
 .pomodoro-fullpage .pomo-timer .session {
   font-size: 1.5rem;
   background-color: var(--green);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 0.8rem 2rem;
   border-radius: 5px;
@@ -440,11 +502,14 @@ button:active {
   outline: none;
   border: none;
   border-radius: 5px;
+  -webkit-box-shadow: 6px 6px 0 black;
   box-shadow: 6px 6px 0 black;
+  -webkit-transition: all ease 0.1s;
   transition: all ease 0.1s;
 }
 
 .pomodoro-fullpage .pomo-timer button:active {
+  -webkit-box-shadow: none;
   box-shadow: none;
 }
 /* Pomodoro Timer Ends Here */
@@ -454,8 +519,14 @@ button:active {
   width: 100%;
   height: 83%;
   margin-top: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -470,9 +541,13 @@ button:active {
 .goals-container .allGoals {
   width: 69%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 0.8rem;
+  -ms-flex-line-pack: start;
   align-content: flex-start;
   overflow: auto;
 }
@@ -488,6 +563,7 @@ button:active {
   border: none;
   border-radius: 5px;
   margin-bottom: 1rem;
+  -webkit-box-shadow: 0 0px 2px var(--tri1);
   box-shadow: 0 0px 2px var(--tri1);
 }
 
