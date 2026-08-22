@@ -306,17 +306,35 @@ function dailyGoals() {
 dailyGoals()
 
 
+// Set the current location and Weather details
+async function showPosition(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    weatherAPICall(latitude, longitude)
+}
+
+function getMyLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+}
+getMyLocation()
+
+
 const apiKey = '87cf32deedd9442793a70453250305'
-const city = 'Nagpur'
+// const city = 'Nagpur'
 
 let data = null;
 
-async function weatherAPICall() {
-    let res = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`)
+async function weatherAPICall(latitude, longitude) {
+    let res = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`)
     data = await res.json()
+
+    document.querySelector('.header1 h3').innerHTML = `${data.location.name}, ${data.location.region}`
 }
 
-weatherAPICall()
+// weatherAPICall()
 
 let headerDate = document.querySelector('.header1 h2')
 let headerTime = document.querySelector('.header1 h1')
