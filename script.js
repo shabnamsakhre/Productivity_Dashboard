@@ -264,9 +264,20 @@ function dailyGoals() {
     addGoalForm.addEventListener('submit', (e) => {
         e.preventDefault()
 
+        let input = goalInput.value;
+        let description = goalDescription.value;
+
+
+        if (input === "")
+            return alert("Goal is required")
+
+        if (description === "")
+            return alert("Goal Description field is required")
+
+
         allGoalsList.push({
-            input: goalInput.value,
-            description: goalDescription.value,
+            input,
+            description,
             time: new Date().toLocaleTimeString(),
             isCompleted: false
         })
